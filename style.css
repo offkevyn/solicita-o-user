@@ -114,6 +114,7 @@ main
     position: relative;
 
     margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 /* ----- CHAMADO ----- */
@@ -130,7 +131,6 @@ main
     background-color: #4d4943;
     width: 28%;
     border-radius: 10px 0 0 10px;
-    overflow-y: auto;
 }
 
 button 
@@ -183,9 +183,12 @@ button:hover
     position: relative;
 }
 
-.chamado_main::-webkit-scrollbar-track 
+.data
 {
-    margin: 20px 0 20px 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .header_chamado .data
@@ -193,11 +196,6 @@ button:hover
     position: relative;
     right: 5px;
     float: right;    
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
 }
 
 .header_chamado i
@@ -213,6 +211,17 @@ button:hover
     overflow: hidden;
     display: inline-block;
     height: 20px;
+}
+
+.chamado_main .lista_chamado
+{
+    overflow-y: auto;
+    height: calc(100% - 80px);
+}
+
+.chamado_main .lista_chamado::-webkit-scrollbar-track 
+{
+    margin: 20px 0 20px 0;
 }
 
 .chamado .mensagem_prev
@@ -315,19 +324,39 @@ button:hover
 .chat
 {
     overflow: hidden;
-    padding: 10px 25px 5px 25px;
+    padding: 10px 25px 10px 25px;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+
+    overflow-y: auto;
+
 }
 
-.chat_main .chat hr
+.chat::-webkit-scrollbar-track 
 {
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
+}
+
+.chat_main .chat .data_linha
+{
+    text-align: center;
+
+    position: relative;
+}
+
+.chat_main .chat .data_linha hr
+{
     display: inline-block;
-    width: 45%;
+    width: 39%;
+    border-top: 1px solid #CCCCCC;
+    margin: 0;
+    margin-bottom: 4px;
 }
 
-.chamado_main .chat .data
+.chat_main .chat .data_linha .data
 {
-    width: 10%;
+    width:20%;
+    display: inline-block;
 }
 
 .footer_chat
@@ -361,6 +390,85 @@ button:hover
 
     resize: none;
 }
+
+.mensagem_enviada, .mensagem_recebida
+{
+    width: 60%;
+    background-color: #ECECED;
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+
+    text-align: justify;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.chat .mensagem_chat .nome_chat
+{
+    display: block;
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.chat .mensagem_chat .nome_chat div
+{
+    display: inline-block;
+}
+
+.chat .mensagem_chat .nome_chat i
+{
+    color: #FBB334;
+    font-size: 25px !important;
+}
+
+.chat .mensagem_enviada
+{
+    position: relative;
+    float: right;
+    right: 15px;
+}
+
+.chat .mensagem_enviada::before
+{
+    content: "";
+    width: 0; 
+    height: 0; 
+    border: 15px solid;
+    display: block;
+    position: absolute;
+    margin-top: -10px;
+    
+    border-color: #ECECED transparent transparent #ECECED;
+    margin-left: calc(100% - 25px);
+}
+
+.chat .mensagem_recebida
+{
+    position: relative;
+    float: left;
+    left: 15px;
+}
+
+.chat .mensagem_recebida::before
+{
+    content: "";
+    width: 0; 
+    height: 0; 
+    border: 15px solid;
+    display: block;
+    position: absolute;
+    margin-top: -10px;
+
+    border-color: #ECECED #ECECED transparent transparent;
+    margin-left: -45px;
+}
+
+
 
 /* ----- SCROLLBAR ----- */
 
