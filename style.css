@@ -29,6 +29,7 @@ header span
     top: 0; bottom: 0;
     margin: auto;    
     display: inline-block;
+    height: 24.8px;
 }
 
 header .logo
@@ -78,6 +79,11 @@ nav a:nth-child(1)
     min-width: 160px;
 }
 
+nav a:hover
+{
+    opacity: 0.8;
+}
+
 nav a span
 {
     padding-left: 3px;
@@ -110,6 +116,8 @@ main
     margin-top: 30px;
 }
 
+/* ----- CHAMADO ----- */
+
 .chamado_main, .chat_main
 {
     height: 100%;
@@ -125,23 +133,33 @@ main
     overflow-y: auto;
 }
 
-.chamado_main button
+button 
 {
     background-color: #FBB334;
     color: #FFFFFF;
-    border-radius: 5px;
-    position: relative;
-    margin: 20px 0 15px 0;
-    --width_: 75%;
-    height: 45px;
-    width: var(--width_);
-    left: calc(50% - calc(var(--width_) / 2));
+    border-radius: 5px !important;
     border: 0;
 
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
+
+}
+
+button:hover
+{
+    background-color: #eeb34c;
+}
+
+.chamado_main button
+{
+    position: relative;
+    margin: 20px 0 15px 0;
+    --width_: 75%;
+    height: 45px;
+    width: var(--width_);
+    left: calc(50% - calc(var(--width_) / 2));
 }
 
 .chamado
@@ -163,6 +181,11 @@ main
 {
     padding-left: 5px;
     position: relative;
+}
+
+.chamado_main::-webkit-scrollbar-track 
+{
+    margin: 20px 0 20px 0;
 }
 
 .header_chamado .data
@@ -225,8 +248,10 @@ main
 
 .status_chamado_atendido
 {
-    color: #439881;
+    color: #1DAE3D;
 }
+
+/* ----- CHAT ----- */
 
 .chat_main
 {
@@ -236,6 +261,130 @@ main
     border-radius:  0 10px 10px 0;
 }
 
+.chat_main .header_chat
+{
+    width: 100%;
+    height: 9%;
+}
+
+.chat_main .chat
+{
+    background-color: #F8F8F9;
+    width: 100%;
+    height: 75%;
+}
+
+.chat_main .footer_chat
+{
+    width: 100%;
+    height: 16%;
+    
+    position: relative;
+}
+
+.chat_main .header_chat div
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.chat_main .header_chat .nome_atendente
+{
+    max-width: 20ch;   
+    text-overflow: ellipsis;  
+    overflow: hidden;
+    display: inline-block;
+    height: 20px; 
+    padding-left: 15px;
+
+    color: #FFFFFF;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+}
+
+.chat_main .header_chat .status_chamado
+{
+    right: 20px;
+}
+
+.chat
+{
+    overflow: hidden;
+    padding: 10px 25px 5px 25px;
+}
+
+.chat_main .chat hr
+{
+    margin: 20px 0 20px 0;
+    display: inline-block;
+    width: 45%;
+}
+
+.chamado_main .chat .data
+{
+    width: 10%;
+}
+
+.footer_chat
+{
+    position: relative;
+}
+
+.footer_chat textarea, .footer_chat button
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.chat_main .footer_chat button
+{
+    position: absolute;
+    margin-left: 1.5rem;
+
+    width: 17%;
+    height: 45px;
+}
+
+.chat_main .footer_chat .digitar_msg
+{
+    width: 75%;
+    height: 85px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-left: 1rem;
+
+    resize: none;
+}
+
+/* ----- SCROLLBAR ----- */
+
+::-webkit-scrollbar 
+{
+    width: 6px;
+}
+  
+::-webkit-scrollbar-track 
+{
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px; 
+}
+   
+::-webkit-scrollbar-thumb
+{
+    background: #AAAAAA; 
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb:hover 
+{
+    background: #868585; 
+}
 
 
 
