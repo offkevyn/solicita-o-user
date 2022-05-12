@@ -342,6 +342,14 @@ button:hover
     text-align: center;
 
     position: relative;
+
+    clear: left;
+    clear: right;
+    float: left;
+    
+    margin-bottom: 0px;
+    margin-top: 30px;
+    width: 100%;
 }
 
 .chat_main .chat .data_linha hr
@@ -350,7 +358,6 @@ button:hover
     width: 39%;
     border-top: 1px solid #CCCCCC;
     margin: 0;
-    margin-bottom: 4px;
 }
 
 .chat_main .chat .data_linha .data
@@ -426,6 +433,17 @@ button:hover
     font-size: 25px !important;
 }
 
+.chat::after
+{
+    content: "";
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    height: 10px;
+    position:relative ;
+    float: left;
+}
+
 .chat .mensagem_enviada
 {
     position: relative;
@@ -467,8 +485,6 @@ button:hover
     border-color: #ECECED #ECECED transparent transparent;
     margin-left: -45px;
 }
-
-
 
 /* ----- SCROLLBAR ----- */
 
