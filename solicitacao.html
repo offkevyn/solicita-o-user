@@ -30,7 +30,7 @@
     <main>
         
 
-        <div class="chamado_main">
+        <div id="chamado_main">
             <div id="mostrar_chamados">
                 CHAMADOS
             </div>
@@ -297,6 +297,26 @@
             </div>
         </div>
     </main>
+
+    <script type="text/javascript">
+        btn_mostrar_chamados = document.getElementById('mostrar_chamados');
+        chamados = document.getElementById('chamado_main');
+        chamados_visivel = false;
+
+        btn_mostrar_chamados.addEventListener('click', function () 
+        {
+            chamados_visivel = !chamados_visivel;
+            if(chamados_visivel)
+            {
+                chamados.style.marginLeft = "-5vw";
+            }
+            else
+            {
+                chamados.style.marginLeft = "calc(-250px - 5vw)";
+            }
+        }
+        );
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

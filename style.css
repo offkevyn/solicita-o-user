@@ -105,7 +105,6 @@ nav a:hover
 
 
 /* ----- MAIN ----- */
-
 main
 {
     width: 80vw;
@@ -136,23 +135,26 @@ main
     transform: rotate(270deg);
 
     position: absolute;
-    right: -69px;
+    right: -67px;
     top: 39px;
 
     visibility: hidden;
+
+    transition: all 1s;
 }
 
-.chamado_main, .chat_main
+#chamado_main, .chat_main
 {
     height: 100%;
     position: absolute;
 }
 
-.chamado_main
+#chamado_main
 {
     background-color: #4d4943;
     width: 28%;
     border-radius: 10px 0 0 10px;
+    transition: margin 1s;
 }
 
 button 
@@ -176,7 +178,7 @@ button:hover
     background-color: #eeb34c;
 }
 
-.chamado_main button
+#chamado_main button
 {
     position: relative;
     margin: 20px 0 15px 0;
@@ -237,15 +239,15 @@ button:hover
     height: 20px;
 }
 
-.chamado_main .lista_chamado
+#chamado_main .lista_chamado
 {
     overflow-y: auto;
     height: calc(100% - 80px);
 }
 
-.chamado_main .lista_chamado::-webkit-scrollbar-track 
+#chamado_main .lista_chamado::-webkit-scrollbar-track 
 {
-    margin: 20px 0 20px 0;
+    margin: 30px 0 20px 0;
 }
 
 .chamado .mensagem_prev
@@ -550,17 +552,18 @@ button:hover
     {
         width: 90vw;
     }
-
+    
     .chat_main
     {
         width: 100%;
     }
 
-    .chamado_main
+    #chamado_main
     {
         z-index: 1000;
-        width: 230px;
-        left: calc(-230px - 5vw);
+        width: 250px;
+        margin-left: calc(-250px - 5vw);
+        border-radius: 0 0 10px 10px;
     }
 
     #mostrar_chamados
