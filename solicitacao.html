@@ -13,6 +13,10 @@
 <body>
     <header class="container-fluid">
         <span class="logo">LOGO</span> 
+        
+        <a href="javascript:void(0);" id="barra_colapse">
+                <i class="fa fa-bars"></i>
+        </a>
         <nav>
             <a  href="#">
                 <i class="fa fa-user-o"></i>
@@ -24,7 +28,7 @@
             </a>
         </nav>
     </header>
-
+    
     
 
     <main>
@@ -316,6 +320,50 @@
             }
         }
         );
+
+        btn_mostrar_nav = document.getElementById('barra_colapse');
+        nav =  document.querySelector('nav');
+        nav_visivel = false;
+
+        btn_mostrar_nav.addEventListener('click', function () 
+        {
+            nav_visivel = !nav_visivel;
+            if(nav_visivel)
+            {
+                nav.style.marginRight = "0";
+            }
+            else
+            {
+                nav.style.marginRight = "-100%";
+            }
+        }
+        );
+
+        btn_enviar_msg = document.getElementById('btn_enviar');
+        chat =  document.querySelector('.chat_main .chat');
+        txt_msg = document.querySelector('.footer_chat textarea');
+
+        btn_enviar_msg.addEventListener('click', function ()
+        {
+            chat.innerHTML += 
+            `
+                <div class="mensagem_chat">
+                    <div class="mensagem_enviada">
+                        <div class="nome_chat">
+                            <i class="fa fa-user"></i> 
+                            <div class="nome">
+                                OffKevynSolicitaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                            </div>
+                        </div>
+                        ` + txt_msg.value + `
+                        </div>
+                </div>            
+            `;
+            txt_msg.value = '';
+                        
+        }
+        );
+
     </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
