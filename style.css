@@ -528,6 +528,34 @@ button:hover
     resize: none;
 }
 
+/* ----- POPUP ----- */
+body #popup
+{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+
+body #popup #conteudo_popup
+{
+    background-color: #1DAE3D;
+    width: 300px;
+    height: 200px;
+
+    vertical-align: middle;
+}
+
+
 /* ----- SCROLLBAR ----- */
 
 ::-webkit-scrollbar 
