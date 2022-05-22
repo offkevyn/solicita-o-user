@@ -529,32 +529,82 @@ button:hover
 }
 
 /* ----- POPUP ----- */
-body #popup
+body #fundo_popup
 {
     align-items: center;
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 
     position: fixed;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.4);
-    height: 100%;
-    width: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    height: 100vh;
+    width: 100vw;
     top: 0;
+
+    transition: all 1.5s;
 }
 
-
-body #popup #conteudo_popup
+body #fundo_popup #popup
 {
-    background-color: #1DAE3D;
-    width: 300px;
-    height: 200px;
+    background-color: rgba(62, 57, 50, 0.9);
+    border-radius: 10px;
+    width: 310px;
+    margin-left: -180vw;
+    margin-top: -150vh;
 
     vertical-align: middle;
+    transition: all 1.5s;
 }
 
+body #fundo_popup #popup h1
+{
+    text-align: center;
+    color: #FBB334;
+
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+body #fundo_popup #popup textarea,
+body #fundo_popup #popup div
+{
+    margin-left: 5%;
+}
+
+body #fundo_popup #popup div
+{
+    color: #FBB334;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: -3px;
+}
+
+body #fundo_popup #popup textarea
+{
+    width: 90%;
+    height: 100px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    resize: none;
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+body #fundo_popup #popup button
+{
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
 
 /* ----- SCROLLBAR ----- */
 
@@ -579,7 +629,6 @@ body #popup #conteudo_popup
 {
     background: #868585; 
 }
-
 
 @media(max-width: 1024px) 
 {

@@ -29,9 +29,13 @@
         </nav>
     </header>
     
-    <div id="popup">
-        <div id="conteudo_popup">
+    <div id="fundo_popup">
+        <div id="popup">
+            <h1>Novo Chamado</h1>
 
+            <div>Mensagem</div>
+            <textarea name="conteudo_novo_chamado" id="txt_novo_chamado"></textarea>
+            <button id="enviar_chamado">ENVIAR</button>
         </div>
     </div>
 
@@ -363,6 +367,28 @@
             `;
             txt_msg.value = '';
                         
+        }
+        );
+
+        btn_nv_chamado = document.getElementById('btn_nv_chamado');
+        fundo_popup = document.getElementById('fundo_popup');
+        popup = document.getElementById('popup');
+        btn_nv_chamado.addEventListener('click', function ()
+        {
+            chamados.style.marginLeft = "calc(-250px - 5vw)";
+            popup.style.margin = "0";
+            fundo_popup.style.display = "flex";
+        }
+        );
+
+        fundo_popup.addEventListener('click', function (e)
+        {
+           if (e.target == this) 
+           {    
+                fundo_popup.style.display = "none";
+                popup.style.marginLeft = "-180vw";
+                popup.style.marginTop = "-150vh";
+           }
         }
         );
 
