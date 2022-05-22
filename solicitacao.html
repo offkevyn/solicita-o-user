@@ -34,7 +34,7 @@
             <h1>Novo Chamado</h1>
 
             <div>Mensagem</div>
-            <textarea name="conteudo_novo_chamado" id="txt_novo_chamado"></textarea>
+            <textarea name="conteudo_novo_chamado" id="txt_novo_chamado" required></textarea>
             <button id="enviar_chamado">ENVIAR</button>
         </div>
     </div>
@@ -309,6 +309,8 @@
     </main>
 
     <script type="text/javascript">
+        
+        // Mostrar lisra de chamados MOBILE
         btn_mostrar_chamados = document.getElementById('mostrar_chamados');
         chamados = document.getElementById('chamado_main');
         chamados_visivel = false;
@@ -322,11 +324,12 @@
             }
             else
             {
-                chamados.style.marginLeft = "calc(-250px - 5vw)";
+                chamados.style.marginLeft = "calc(-300px - 5vw)";
             }
         }
         );
 
+        // Mostrar nav MOBILE
         btn_mostrar_nav = document.getElementById('barra_colapse');
         nav =  document.querySelector('nav');
         nav_visivel = false;
@@ -336,15 +339,18 @@
             nav_visivel = !nav_visivel;
             if(nav_visivel)
             {
+                nav.style.display = "block";
                 nav.style.marginRight = "0";
             }
             else
             {
                 nav.style.marginRight = "-100%";
+                nav.style.display = "none";
             }
         }
         );
 
+        // Enviar mensagem
         btn_enviar_msg = document.getElementById('btn_enviar');
         chat =  document.querySelector('.chat_main .chat');
         txt_msg = document.querySelector('.footer_chat textarea');
@@ -370,14 +376,25 @@
         }
         );
 
+        // PopUP
+        function ocultar_popup ()
+        {
+            fundo_popup.style.visibility = "hidden";
+            popup.style.marginLeft = "-180vw";
+            popup.style.marginTop = "-150vh";
+        }
+
         btn_nv_chamado = document.getElementById('btn_nv_chamado');
         fundo_popup = document.getElementById('fundo_popup');
         popup = document.getElementById('popup');
+        btn_enviar_chamado = document.getElementById('enviar_chamado');
+        lista_chamado =  document.querySelector('main #chamado_main .lista_chamado');
+        txt_novo_chamado = document.getElementById('txt_novo_chamado');
+
         btn_nv_chamado.addEventListener('click', function ()
-        {
-            chamados.style.marginLeft = "calc(-250px - 5vw)";
+        {            
+            fundo_popup.style.visibility = "visible";
             popup.style.margin = "0";
-            fundo_popup.style.display = "flex";
         }
         );
 
@@ -385,10 +402,33 @@
         {
            if (e.target == this) 
            {    
-                fundo_popup.style.display = "none";
-                popup.style.marginLeft = "-180vw";
-                popup.style.marginTop = "-150vh";
+                ocultar_popup();
            }
+        }
+        );
+
+        btn_enviar_chamado.addEventListener('click', function ()
+        {            
+            //Testa se o textArea está vazio ou não
+            if(txt_novo_chamado.value)
+            {
+                lista_chamado.insertAdjacentHTML('afterbegin',
+                `<div class="chamado">
+                    <div class="header_chamado">
+                        <i class="fa fa-commenting-o"></i>
+                        <span class="nome_atendente">OffKevynlllllllllllllllllllllllllllllllll</span>
+                        <div class="data">Aberto: 10/05/2022</div>
+                    </div>
+                    <div class="mensagem_prev">
+                        ` + txt_novo_chamado.value + `
+                    </div>
+                    <div class="status_chamado status_chamado_aberto">
+                        <i class="fa fa-clock-o"></i>
+                        Em aberto
+                    </div>
+                </div>`);
+                ocultar_popup();
+            }
         }
         );
 

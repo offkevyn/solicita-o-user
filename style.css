@@ -53,12 +53,12 @@ nav
     font-weight: 400;
     font-size: 17px;
     color: #FFFFFF;
-
     position: relative;
     max-width: 300px;
 
     top: 50%;
     transform: translateY(-50%);
+
 }
 
 nav a i, #barra_colapse
@@ -125,7 +125,7 @@ main
 {
     width: 80vw;
     margin: 0 auto;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 150px);
     position: relative;
 
     margin-top: 30px;
@@ -208,7 +208,6 @@ button:hover
     margin-bottom: 10px;
 
     max-height: 130px;
-    min-height: 100px;
     width: 90%;
     border-radius: 10px;
 
@@ -246,7 +245,7 @@ button:hover
 
 .header_chamado .nome_atendente
 {
-    max-width: 12ch;   
+    max-width: 11ch;   
     text-overflow: ellipsis;  
     overflow: hidden;
     display: inline-block;
@@ -369,8 +368,6 @@ button:hover
     border-right: 1px solid #CCCCCC;
 
     overflow-y: auto;
-    min-width: 320px;
-
 }
 
 .chat::-webkit-scrollbar-track 
@@ -532,19 +529,20 @@ button:hover
 body #fundo_popup
 {
     align-items: center;
-    display: none;
+    display: flex;
+    visibility: hidden;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 
     position: fixed;
-    z-index: 1000;
+    z-index: 3000;
     background-color: rgba(0, 0, 0, 0.55);
     height: 100vh;
     width: 100vw;
     top: 0;
 
-    transition: all 1.5s;
+    transition: all .2s;
 }
 
 body #fundo_popup #popup
@@ -556,7 +554,7 @@ body #fundo_popup #popup
     margin-top: -150vh;
 
     vertical-align: middle;
-    transition: all 1.5s;
+    transition: all .5s;
 }
 
 body #fundo_popup #popup h1
@@ -653,8 +651,8 @@ body #fundo_popup #popup button
     #chamado_main
     {
         z-index: 1000;
-        width: 250px;
-        margin-left: calc(-250px - 5vw);
+        width: 300px;
+        margin-left: calc(-300px - 5vw);
         border-radius: 0 0 10px 10px;
     }
 
@@ -676,7 +674,7 @@ body #fundo_popup #popup button
         left: 50px;
     }
 
-    nav
+    body header nav
     {
         position: absolute;
         top: 100%;
@@ -688,6 +686,7 @@ body #fundo_popup #popup button
         z-index: 1000;
         border-bottom-left-radius: 10px;
         padding: 0;
+        display: none;
 
         transform: translateY(0);
         transition: margin 0.5s;
